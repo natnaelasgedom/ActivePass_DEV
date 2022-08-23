@@ -1,11 +1,11 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import colors from '../config/colors';
 
 function HomeScreen(props) {
     return (
         <View style={styles.background}>
-            
+
         </View>
     );
 }
