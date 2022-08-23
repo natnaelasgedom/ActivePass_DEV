@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
-//Hei
+//Hei, Gael! Dette var en fin setning!
 
 export default function App() {
   return (
