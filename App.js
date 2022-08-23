@@ -7,11 +7,11 @@ import HomeScreen from './app/screens/HomeScreen';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Hello, Miriam</Text>
+       <HomeScreen/>
     </View>
   );
 }
-// <HomeScreen/>
+//
 const styles = StyleSheet.create({
   container: {
     flex: 1,
