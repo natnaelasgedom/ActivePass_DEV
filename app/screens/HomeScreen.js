@@ -13,7 +13,9 @@ function HomeScreen(props) {
 const styles = StyleSheet.create({
     background: {
         backgroundColor: colors.primary,
-        flex: 1
+        flex: 1,
+        width: "100%",
+        height: "50%"
     }
 })
 
