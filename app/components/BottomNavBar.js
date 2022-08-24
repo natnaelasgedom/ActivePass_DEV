@@ -29,8 +29,8 @@ const styles = StyleSheet.create({
         borderTopColor: colors.background2
     },
     icons: {
-        height: 30,
-        width: 30
+        height: 40,
+        width: 40
     }
 })
 
