@@ -1,11 +1,13 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Image } from 'react-native';
 import BottomNavBar from '../components/BottomNavBar';
+import TopSearchBar from '../components/TopSearchBar';
 import colors from '../config/colors';
 
 function HomeScreen(props) {
     return (
         <View style={styles.background}>
+            <TopSearchBar />
             <BottomNavBar/>
         </View>
     );
@@ -16,8 +18,12 @@ const styles = StyleSheet.create({
         backgroundColor: colors.background3,
         flex: 1,
         width: "100%",
-        justifyContent: 'flex-end',
+        justifyContent: 'center',
         alignItems: 'center'
+    },
+    filterBtnIcons: {
+        width: 40,
+        height: 40
     }
 })
 

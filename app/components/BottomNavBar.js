@@ -26,7 +26,9 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'center',
         borderTopWidth: 1,
-        borderTopColor: colors.background2
+        borderTopColor: colors.background2,
+        position: 'absolute',
+        bottom: 0
     },
     icons: {
         height: 40,
