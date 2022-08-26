@@ -58,7 +58,9 @@ const styles = StyleSheet.create({
         height: 30
     },
     filterText: {
-
+        color: colors.basic2,
+        fontSize: 18,
+        fontWeight: '500'
     },
     leftFilterBtnArea: {
         flex: 1, 
@@ -74,7 +76,7 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-end',
         alignItems: 'center',
         //backgroundColor: "green",
-        marginRight: 25
+        marginRight: 20
     },
     textInputStyle: {
         height: 39,
