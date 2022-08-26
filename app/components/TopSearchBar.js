@@ -60,23 +60,24 @@ const styles = StyleSheet.create({
     filterText: {
         color: colors.basic2,
         fontSize: 18,
-        fontWeight: '500'
+        fontWeight: 'bold',
+        marginRight: 5
     },
     leftFilterBtnArea: {
         flex: 1, 
         flexDirection: 'row',
-        justifyContent: 'flex-start',
+        justifyContent: 'center',
         alignItems: 'center',
         //backgroundColor: "yellow",
-        marginLeft: 20
+        //marginLeft: 20
     },
     rigthFilterBtnArea: {
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'flex-end',
+        justifyContent: 'center',
         alignItems: 'center',
         //backgroundColor: "green",
-        marginRight: 20
+        //marginRight: 20
     },
     textInputStyle: {
         height: 39,
