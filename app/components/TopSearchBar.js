@@ -7,17 +7,22 @@ function TopSearchBar(props) {
         <View style={styles.container}>
             <View style={styles.searchAndLogo}>
                 <View>
-                    <Text>Activespots</Text>
+                    <Text style={styles.logoText}>Activespots</Text>
                 </View>
                 <View style = {styles.textInputContainer}>
                     <TextInput
                         style={styles.textInputStyle}
+                        placeholder="Search for any activity or spot"
+                    />
+                    <Image
+                    source={require('../assets/search-icon/search-darkGrey-icon.png')}
+                    style={styles.searchIcon}
                     />
                 </View>
             </View>
             <View style={styles.filterBtnArea}>
                 <View style={[styles.leftFilterBtnArea]}>
-                    <Text style={styles.filterText}>Location</Text>
+                    <Text style={styles.filterText}>Filter</Text>
                     <Image
                         source={require("../assets/filter-icon/filter-black-icon.png")}
                         style={styles.filterBtnIcons}
@@ -67,34 +72,47 @@ const styles = StyleSheet.create({
         flex: 1, 
         flexDirection: 'row',
         justifyContent: 'center',
-        alignItems: 'center',
-        //backgroundColor: "yellow",
-        //marginLeft: 20
+        alignItems: 'center'
+    },
+    logoText: {
+        fontSize: 16,
+        color: colors.basic2,
+        fontWeight: '500'
     },
     rigthFilterBtnArea: {
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        //backgroundColor: "green",
-        //marginRight: 20
+    },
+    searchAndLogo: {
+        width: '95%',
+        alignItems: 'center'
+    },
+    searchIcon: {
+        width: 20,
+        height: 20,
+        position: 'absolute',
+        right: 20,
+        top: 15
     },
     textInputStyle: {
         height: 39,
         borderWidth: 1,
-        paddingLeft: 20,
+        paddingLeft: 44,
         margin: 5,
         borderColor: colors.basic1,
         backgroundColor: colors.basic2,
-        borderRadius: 50
-        
-    },
-    searchAndLogo: {
-        width: '90%',
-        alignItems: 'center'
+        borderRadius: 50,
+        color: colors.basic1,
+        fontSize: 14,
+        textShadowColor: colors.background1  ,
+        textShadowOffset: {width: -1, height: 1},
+        textShadowRadius: 2
     },
     textInputContainer: {
-        width: '100%'
+        width: '100%',
+        
     }
 
 })
