@@ -24,14 +24,14 @@ function TopSearchBar(props) {
                 <View style={[styles.leftFilterBtnArea]}>
                     <Text style={styles.filterText}>Filter</Text>
                     <Image
-                        source={require("../assets/filter-icon/filter-black-icon.png")}
+                        source={require("../assets/filter-icon/filter-melon-icon.png")}
                         style={styles.filterBtnIcons}
                     />
                 </View>
                 <View style={[styles.rigthFilterBtnArea]}>
                     <Text style={styles.filterText}>Map</Text>
                     <Image
-                        source={require("../assets/mapMarker-icon/mapMarker-black-icon.png")}
+                        source={require("../assets/mapMarker-icon/mapMarker-melon-icon.png")}
                         style={styles.filterBtnIcons}
                         />
                 </View>
@@ -41,8 +41,8 @@ function TopSearchBar(props) {
 }
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: colors.primary1,
-        height: '25%',
+        backgroundColor: colors.basic3,
+        height: '20%',
         width: '100%',
         position: 'absolute',
         top: 0,
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     filterBtnArea: {
-        backgroundColor: colors.primary1,
+        backgroundColor: colors.basic3,
         width: '100%',
         height: '25%',
         flexDirection: 'row',
@@ -107,9 +107,9 @@ const styles = StyleSheet.create({
         color: colors.basic1,
         fontSize: 14,
         //textShadow
-        textShadowColor: colors.background1  ,
+        /* textShadowColor: colors.background1  ,
         textShadowOffset: {width: -1, height: 1},
-        textShadowRadius: 2
+        textShadowRadius: 2 */
     },
     textInputContainer: {
         width: '100%',

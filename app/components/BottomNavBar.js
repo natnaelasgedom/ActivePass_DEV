@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: colors.basic2,
         width: '100%',
-        height: '8%',
+        height: '5%',
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
         bottom: 0
     },
     icons: {
-        height: 40,
-        width: 40
+        height: 25,
+        width: 25
     }
 })
 
