@@ -90,8 +90,8 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     searchIcon: {
-        width: 20,
-        height: 20,
+        width: 25,
+        height: 25,
         position: 'absolute',
         right: 20,
         top: 15
@@ -106,6 +106,7 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         color: colors.basic1,
         fontSize: 14,
+        //textShadow
         textShadowColor: colors.background1  ,
         textShadowOffset: {width: -1, height: 1},
         textShadowRadius: 2
