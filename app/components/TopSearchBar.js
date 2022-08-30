@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, TextInput } from 'react-native';
+import { StyleSheet, View, Text, Image, TextInput, Dimensions } from 'react-native';
 import colors from '../config/colors';
 
 function TopSearchBar(props) {
@@ -42,11 +42,10 @@ function TopSearchBar(props) {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: colors.basic3,
-        height: '20%',
+        height: '20%' ,
         width: '100%',
-        position: 'absolute',
+        position: 'relative',
         top: 0,
-        flex: 1,
         justifyContent: 'flex-end',
         alignItems: 'center'
     },
