@@ -24,14 +24,14 @@ function TopSearchBar(props) {
                 <View style={[styles.leftFilterBtnArea]}>
                     <Text style={styles.filterText}>Filter</Text>
                     <Image
-                        source={require("../assets/filter-icon/filter-melon-icon.png")}
+                        source={require("../assets/filter-icon/filter-brightOrange-icon.png")}
                         style={styles.filterBtnIcons}
                     />
                 </View>
                 <View style={[styles.rigthFilterBtnArea]}>
                     <Text style={styles.filterText}>Map</Text>
                     <Image
-                        source={require("../assets/mapMarker-icon/mapMarker-melon-icon.png")}
+                        source={require("../assets/mapMarker-icon/mapMarker-brightOrange-icon.png")}
                         style={styles.filterBtnIcons}
                         />
                 </View>
