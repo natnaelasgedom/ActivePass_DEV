@@ -28,8 +28,9 @@ function ResultArea(props) {
             <View>
                 <Text>Top choices</Text>
             </View>
-            <ScrollView>
-            {data && data.map(e => {
+            {data && (<ScrollView>
+                <Text style={{fontSize: 40, fontWeight: 'bold'}}>RESULTS</Text>
+                {data.map(e => {
                 return(
                     
                         <View>
@@ -37,18 +38,17 @@ function ResultArea(props) {
                             <Text>Value 2: {e.username}</Text>
                             <Text>Value 3: {e.username}</Text>
                             <Text>Value 4: {e.username}</Text>
-                            <Text>Value 5: {e.username}</Text>
+                            {/* <Text>Value 5: {e.username}</Text>
                             <Text>Value 6: {e.username}</Text>
                             <Text>Value 7: {e.username}</Text>
                             <Text>Value 8: {e.username}</Text>
                             <Text>Value 9: {e.username}</Text>
-                            <Text>Value 10: {e.username}</Text>
+                            <Text>Value 10: {e.username}</Text> */}
                         </View>
                         
                     
                 )
-            })}
-            </ScrollView>
+            })}</ScrollView>)}
         </View>
     );
 }
