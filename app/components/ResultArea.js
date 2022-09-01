@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
 import endpoints from '../config/endpoints';
+import ResultItem from './ResultItem';
 
 const getDataList = async (url) => {
     const response = await fetch(url);
@@ -17,7 +18,7 @@ function ResultArea(props) {
 
     useEffect(() => {
         
-        getDataList(endpoints.jsonPlaceholder.users)
+        getDataList(endpoints.jsonPlaceholder.todos)
         .then(dataList => {
             setData(dataList);
         })
@@ -28,27 +29,15 @@ function ResultArea(props) {
             <View>
                 <Text>Top choices</Text>
             </View>
-            {data && (<ScrollView>
-                <Text style={{fontSize: 40, fontWeight: 'bold'}}>RESULTS</Text>
-                {data.map(e => {
-                return(
-                    
-                        <View>
-                            <Text>Value 1: {e.name}</Text>
-                            <Text>Value 2: {e.username}</Text>
-                            <Text>Value 3: {e.username}</Text>
-                            <Text>Value 4: {e.username}</Text>
-                            {/* <Text>Value 5: {e.username}</Text>
-                            <Text>Value 6: {e.username}</Text>
-                            <Text>Value 7: {e.username}</Text>
-                            <Text>Value 8: {e.username}</Text>
-                            <Text>Value 9: {e.username}</Text>
-                            <Text>Value 10: {e.username}</Text> */}
-                        </View>
-                        
-                    
-                )
-            })}</ScrollView>)}
+            {data && (
+                <FlatList
+                    data={data}
+                    renderItem={({ item }) => (
+                        <ResultItem value1={item.title} value2={item.completed } />
+                    )}
+                    keyExtractor={item => item.id}
+                />
+            )}
         </View>
     );
 }
