@@ -29,8 +29,8 @@ function ResultItem(props) {
                 />
             </View>
             <View style={styles.textContainer}>
-                <Text style={styles.textHeader}>CardHeader</Text>
-                <Text style={styles.textRating}>CardDescription: {value1}</Text>
+                <Text style={styles.textHeader}>{value1.charAt(0).toUpperCase() + value1.slice(1)}</Text>
+                <Text style={styles.textRating}>9,5 Excellent (3568 visits)</Text>
                 <View style={styles.distanceContainer}>
                     <Image
                         style={styles.distanceIcon}
@@ -62,7 +62,9 @@ const styles = StyleSheet.create({
         height: 20,
         marginRight: 10
     },
-    distanceText: {},
+    distanceText: {
+        fontSize: 14
+    },
     imgContainer: {
         width: '30%',
         height: 100,
@@ -90,7 +92,9 @@ const styles = StyleSheet.create({
         alignItems: 'flex-start',
         paddingLeft: 15
     },
-    textRating: {},
+    textRating: {
+        fontSize: 14
+    },
     textHeader: {
         fontSize: 16,
         fontWeight: 'bold'

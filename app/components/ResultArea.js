@@ -18,9 +18,9 @@ function ResultArea(props) {
 
     useEffect(() => {
         
-        getDataList(endpoints.jsonPlaceholder.todos)
+        getDataList(endpoints.pokemon.baseUrl)
         .then(dataList => {
-            setData(dataList);
+            setData(dataList.results);
         })
     }, []);
 
@@ -33,9 +33,9 @@ function ResultArea(props) {
                 <FlatList
                     data={data}
                     renderItem={({ item }) => (
-                        <ResultItem value1={item.title} value2={item.completed } />
+                        <ResultItem value1={item.name} value2={item.url } />
                     )}
-                    keyExtractor={item => item.id}
+                    keyExtractor={item => item.name}
                 />
             )}
         </View>
