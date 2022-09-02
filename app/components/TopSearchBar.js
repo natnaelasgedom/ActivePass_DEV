@@ -58,8 +58,8 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     filterBtnIcons: {
-        width: 30,
-        height: 30
+        width: 20,
+        height: 20
     },
     filterText: {
         color: colors.basic2,
