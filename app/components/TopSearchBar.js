@@ -11,7 +11,7 @@ function TopSearchBar(props) {
                 <View>
                     <Text style={styles.logoText}>Activespots</Text>
                 </View>
-                <View style = {styles.textInputContainer}>
+                <View style={styles.textInputContainer}>
                     <TextInput
                         style={styles.textInputStyle}
                         placeholder='Search here'
@@ -21,8 +21,8 @@ function TopSearchBar(props) {
                         clearButtonMode='while-editing'
                     />
                     <Image
-                    source={require('../assets/search-icon/search-darkGrey-icon.png')}
-                    style={styles.searchIcon}
+                        source={require('../assets/search-icon/search-darkGrey-icon.png')}
+                        style={styles.searchIcon}
                     />
                 </View>
             </View>
@@ -39,7 +39,7 @@ function TopSearchBar(props) {
                     <Image
                         source={require("../assets/mapMarker-icon/mapMarker-white-icon.png")}
                         style={styles.filterBtnIcons}
-                        />
+                    />
                 </View>
             </View>
         </View>
@@ -48,7 +48,7 @@ function TopSearchBar(props) {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: colors.basic3,
-        height: '20%' ,
+        height: '20%',
         width: '100%',
         position: 'relative',
         top: 0,
@@ -64,8 +64,8 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     filterBtnIcons: {
-        width: 20,
-        height: 20
+        width: 16,
+        height: 16
     },
     filterText: {
         color: colors.basic2,
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
         marginRight: 5
     },
     leftFilterBtnArea: {
-        flex: 1, 
+        flex: 1,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center'
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     },
     textInputContainer: {
         width: '100%',
-        
+
     }
 
 })
