@@ -21,7 +21,12 @@ function ResultItem(props) {
     }, [])
 
     return (
-        <View style={styles.container}>
+        <View
+            style={styles.container}
+            onStartShouldSetResponder={() => {
+                alert(value1 +' clicked!')
+            }}
+        >
             <View style={styles.imgContainer}>
                 <Image
                     source={source}

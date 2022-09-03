@@ -1,8 +1,10 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, TextInput, Dimensions } from 'react-native';
+import { StyleSheet, View, Text, Image, TextInput } from 'react-native';
 import colors from '../config/colors';
 
 function TopSearchBar(props) {
+    const { search, searchFunction } = props;
+
     return (
         <View style={styles.container}>
             <View style={styles.searchAndLogo}>
@@ -12,7 +14,11 @@ function TopSearchBar(props) {
                 <View style = {styles.textInputContainer}>
                     <TextInput
                         style={styles.textInputStyle}
-                        placeholder="Search for any activity or spot"
+                        placeholder='Search here'
+                        onChangeText={(text) => searchFunction(text)}
+                        value={search}
+                        underlineColorAndroid='transparent'
+                        clearButtonMode='while-editing'
                     />
                     <Image
                     source={require('../assets/search-icon/search-darkGrey-icon.png')}
@@ -96,7 +102,7 @@ const styles = StyleSheet.create({
         top: 15
     },
     textInputStyle: {
-        height: 39,
+        height: 40,
         borderWidth: 1,
         paddingLeft: 44,
         margin: 5,
