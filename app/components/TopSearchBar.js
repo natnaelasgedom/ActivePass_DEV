@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View, Text, Image, TextInput } from 'react-native';
 import colors from '../config/colors';
 
 function TopSearchBar(props) {
     const { search, searchFunction } = props;
+    const [input, setInput] = useState('');
 
     return (
         <View style={styles.container}>
@@ -15,8 +16,9 @@ function TopSearchBar(props) {
                     <TextInput
                         style={styles.textInputStyle}
                         placeholder='Search here'
-                        onChangeText={(text) => searchFunction(text)}
-                        value={search}
+                        onChangeText={(text) => setInput(text)}
+                        onSubmitEditing={() => searchFunction(input)}
+                        value={input}
                         underlineColorAndroid='transparent'
                         clearButtonMode='while-editing'
                     />

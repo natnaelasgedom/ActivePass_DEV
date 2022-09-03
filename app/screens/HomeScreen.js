@@ -27,7 +27,7 @@ function HomeScreen(props) {
         .then(dataList => {
             setMasterData(dataList.results);
         })
-    }, []);
+    }, [masterData]);
     const searchFunction = (searchString) => {
         if (searchString) {
             const newData = masterData.filter((item) => {

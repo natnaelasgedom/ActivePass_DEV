@@ -24,7 +24,7 @@ function ResultItem(props) {
         <View
             style={styles.container}
             onStartShouldSetResponder={() => {
-                alert(value1 +' clicked!')
+                console.log('We may have to change this to a button!')
             }}
         >
             <View style={styles.imgContainer}>
