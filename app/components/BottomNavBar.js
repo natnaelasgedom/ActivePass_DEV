@@ -3,14 +3,23 @@ import { View, Text, StyleSheet, Image } from 'react-native';
 import colors from '../config/colors.js';
 
 function BottomNavBar(props) {
+    const { focus } = props;
+
+    const homeIcon = focus.toLowerCase() == 'home'
+        ? require('../assets/home-icon/home-brightOrange-icon.png')
+        : require('../assets/home-icon/home-black-icon.png');
+    
+    const profileIcon = focus.toLowerCase() == 'profile'
+        ? require('../assets/user-icon/user-brightOrange-icon.png')
+        : require('../assets/user-icon/user-black-icon.png');
     return (
         <View style={styles.container}>
             <Image
-                source={require('../assets/home-icon/home-brightOrange-icon.png')}
+                source={homeIcon}
                 style={styles.icons}
             />
             <Image
-                source={require('../assets/user-icon/user-black-icon.png')}
+                source={profileIcon}
                 style={styles.icons}
             />
         </View>
@@ -27,8 +36,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderTopWidth: 1,
         borderTopColor: colors.background2,
-        position: 'relative',
-        bottom: 0
+        position: 'absolute', //needs to be changed back to relative when other elements are in place
+        bottom: 0,
     },
     icons: {
         height: 25,

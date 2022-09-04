@@ -28,6 +28,8 @@ function HomeScreen(props) {
             setMasterData(dataList.results);
         })
     }, [masterData]);
+
+
     const searchFunction = (searchString) => {
         if (searchString) {
             const newData = masterData.filter((item) => {
@@ -44,8 +46,8 @@ function HomeScreen(props) {
     return (
         <View style={styles.background}>
             <TopSearchBar search={search} searchFunction={searchFunction} />
-            <ResultArea masterData={masterData } filteredData={filteredData} />
-            <BottomNavBar/>
+            <ResultArea masterData={masterData} filteredData={filteredData} />
+            <BottomNavBar focus='home'/>
         </View>
     );
 }
