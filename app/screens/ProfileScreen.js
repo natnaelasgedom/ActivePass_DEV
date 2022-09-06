@@ -1,13 +1,15 @@
 import React from 'react';
 import { View,Text, StyleSheet } from 'react-native';
 import BottomNavBar from '../components/BottomNavBar';
+import ProfileContent from '../components/ProfileContent';
 import ProfileTopCard from '../components/ProfileTopCard';
 import colors from '../config/colors';
 
 function ProfileScreen(props) {
     return (
         <View style={styles.background}>
-            <ProfileTopCard/>
+            <ProfileTopCard />
+            <ProfileContent/>
             <BottomNavBar focus='profile' />
         </View>
     );

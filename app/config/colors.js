@@ -1,7 +1,7 @@
 export default {
     background1: "#2C2B2B",//Dark Grey
     background2: "#707070", //Medium Grey
-    background3: "#F1EEEE", //Ligth Grey
+    background3: "#F1EEEE", //Light Grey
     primary1: "#FD550D",//Brigth Orange
     primary2: "#FEB89A", //Melon
     primary3: "#FFF1EB", //Seashell

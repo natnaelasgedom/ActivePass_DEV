@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderTopWidth: 1,
         borderTopColor: colors.background2,
-        position: 'absolute', //needs to be changed back to relative when other elements are in place
+        position: 'relative',
         bottom: 0,
     },
     icons: {
