@@ -1,11 +1,31 @@
 import React, { useEffect, useState } from 'react';
-import { Animated, StyleSheet, Text } from 'react-native';
+import { Animated, Image, StyleSheet, Text, View } from 'react-native';
 import colors from '../config/colors';
 
 const contentFiller = (type) => {
-    if (type.toLower() == 'personal info') {
-        const results = '';//Her setter du inn hele View slik du forventer at det skal komme.
+    let results;
+    switch (type?.toLowerCase()) {
+        case 'personal info':
+            results = (
+                <View>
+                    <Text style={styles.text}>
+                        Personal Info here...
+                    </Text>
+                </View>
+            )
+            break;
+    
+        default:
+            results = (
+                <View>
+                    <Text style={styles.text}>
+                        Nothing to show...
+                    </Text>
+                </View>
+            )
+            break;
     }
+    return results;
 };
 
 
@@ -22,15 +42,29 @@ function ExpandableView({ expanded = false , content, type}) {
 
     return (
         <Animated.View style={[{ height }, styles.container]}>
-            <Text style={styles.text}>Hello, mf</Text>
+            <Image
+                style={styles.editIcon}
+                source={require('../assets/edit-icon/edit-black-icon.png')}
+            />
+            {contentFiller(type)}
         </Animated.View>
     );
 }
+
+
+
 const styles = StyleSheet.create({
     container: {
         backgroundColor: colors.basic2,
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    editIcon: {
+        width: 25,
+        height: '14%',
+        position: 'absolute',
+        right: 10,
+        top: 10
     },
     text: {
         fontSize: 20,
