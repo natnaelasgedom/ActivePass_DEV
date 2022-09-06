@@ -2,7 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { Animated, StyleSheet, Text } from 'react-native';
 import colors from '../config/colors';
 
-function ExpandableView({ expanded = false }) {
+const contentFiller = (type) => {
+    if (type.toLower() == 'personal info') {
+        const results = '';//Her setter du inn hele View slik du forventer at det skal komme.
+    }
+};
+
+
+function ExpandableView({ expanded = false , content, type}) {
     const [height] = useState(new Animated.Value(0));
     
     useEffect(() => {
@@ -21,14 +28,14 @@ function ExpandableView({ expanded = false }) {
 }
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: colors.background2,
+        backgroundColor: colors.basic2,
         justifyContent: 'center',
         alignItems: 'center'
     },
     text: {
         fontSize: 20,
         fontWeight: 'bold',
-        color: colors.basic2
+        color: colors.basic1
     }
 })
 export default ExpandableView;

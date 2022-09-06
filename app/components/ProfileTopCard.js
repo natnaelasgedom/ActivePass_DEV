@@ -7,7 +7,7 @@ function ProfileTopCard(props) {
         <View style={styles.container}>
             <Image
                 style={styles.editIcon}
-                source={require('../assets/search-icon/search-black-icon.png')}
+                source={require('../assets/edit-icon/edit-black-icon.png')}
             />
             <View style={styles.imgContainer}>
                 <Image
@@ -20,14 +20,14 @@ function ProfileTopCard(props) {
                 <View style={styles.contactCardInfo}>
                     <Image
                         style={styles.contactIcon}
-                        source={require('../assets/home-icon/home-black-icon.png')}
+                        source={require('../assets/iPhone-icon/iPhone-black-icon.png')}
                     />
                     <Text>+47 998 87 766</Text>
                 </View>
                 <View style={styles.contactCardInfo}>
                     <Image
                         style={styles.contactIcon}
-                        source={require('../assets/user-icon/user-black-icon.png')}
+                        source={require('../assets/mail-icon/mail-black-icon.png')}
                     />
                     <Text>john.smith@example.com</Text>
                 </View>
