@@ -7,8 +7,7 @@ import ProfileContentCard from './ProfileContentCard';
 function ProfileContent(props) {
     return (
         <ScrollView style={styles.scrollContainer}>
-            <View style={styles.container}>
-                
+            <View style={styles.container}>    
                 <ProfileContentCard title='Personal Info' />
                 <ProfileContentCard title='Favorite Activities' />
                 <ProfileContentCard title='Favorite Activespots' />

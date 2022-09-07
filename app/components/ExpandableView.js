@@ -11,6 +11,7 @@ const contentFiller = (type) => {
                     <Text style={styles.text}>
                         Personal Info here...
                     </Text>
+                    <Text style={styles.textLabel}>Age: <Text style={styles.text}>36</Text></Text>
                 </View>
             )
             break;
