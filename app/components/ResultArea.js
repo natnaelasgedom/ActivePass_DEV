@@ -14,7 +14,7 @@ function ResultArea(props) {
                 <Text>Top choices</Text>
             </View>
                 <FlatList
-                    data={filteredData ? filteredData : masterData}
+                    data={filteredData.length > 0 ? filteredData : masterData}
                     renderItem={({ item }) => (
                         <ResultItem value1={item.name} value2={item.url } />
                     )}

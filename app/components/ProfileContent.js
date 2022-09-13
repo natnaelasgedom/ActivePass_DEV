@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import colors from '../config/colors';
 import ExpandableView from './ExpandableView';
-import ProfileContentCard from './ProfileContentCard';
+import ExpendableBar from './ExpendableBar';
 
 function ProfileContent(props) {
     return (
         <ScrollView style={styles.scrollContainer}>
             <View style={styles.container}>    
-                <ProfileContentCard title='Personal Info' />
-                <ProfileContentCard title='Favorite Activities' />
-                <ProfileContentCard title='Favorite Activespots' />
+                <ExpendableBar title='Personal Info' />
+                <ExpendableBar title='Favorite Activities' />
+                <ExpendableBar title='Favorite Activespots' />
             </View>
         </ScrollView>
     );

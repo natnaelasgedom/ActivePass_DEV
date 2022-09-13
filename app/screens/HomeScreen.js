@@ -21,14 +21,14 @@ function HomeScreen(props) {
     const [masterData, setMasterData] = useState([]);
     const [filteredData, setFilteredData] = useState([]);
     const [search, setSearch] = useState('');
-
+    
     useEffect(() => {
         getDataList(endpoints.pokemon.baseUrl)
         .then(dataList => {
             setMasterData(dataList.results);
+            //setFilteredData(dataList.results);
         })
     }, [masterData]);
-
 
     const searchFunction = (searchString) => {
         if (searchString) {

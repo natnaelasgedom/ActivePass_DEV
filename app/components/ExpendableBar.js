@@ -3,7 +3,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import colors from '../config/colors';
 import ExpandableView from './ExpandableView';
 
-function ProfileContentCard(props) {
+function ExpendableBar(props) {
     const { title } = props;
     const [expanded, setExpanded] = useState(true);
     
@@ -14,7 +14,7 @@ function ProfileContentCard(props) {
     const extraMargin = title.toLowerCase() == 'personal info' ?
         { marginTop: 20 } : {};
     return (
-        <View>
+        <View style={styles.container}>
             <TouchableOpacity
                 onPress={() => {
                     setExpanded(!expanded);
@@ -33,6 +33,9 @@ function ProfileContentCard(props) {
     );
 }
 const styles = StyleSheet.create({
+    container: {
+        width: '100%',
+    },
     expandArrowIcon: {
         height: 33,
         width: 33,
@@ -55,4 +58,4 @@ const styles = StyleSheet.create({
         marginLeft: 20
     },
 })
-export default ProfileContentCard;
+export default ExpendableBar;
