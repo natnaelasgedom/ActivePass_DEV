@@ -48,6 +48,16 @@ const contentFiller = (type) => {
                 </View>
             )
             break;
+        case 'workouts':
+            results = (
+                <View style={styles.equipmentsContainer}>
+                    <Text style={styles.text}>High Pullup Bar</Text>
+                    <Text style={styles.text}>Low Pullup Bar</Text>
+                    <Text style={styles.text}>Paralettes</Text>
+                    <Text style={styles.text}>Monkey Bar</Text>
+                </View>
+            )
+            break;
         default:
             results = (
                 <View>

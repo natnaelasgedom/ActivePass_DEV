@@ -1,4 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet, Text, View } from 'react-native';
 import ActiveSpot from './app/screens/ActiveSpot';
 import HomeScreen from './app/screens/HomeScreen';
@@ -7,12 +8,31 @@ import ProfileScreen from './app/screens/ProfileScreen';
 
 
 export default function App() {
+
+  const Stack = createNativeStackNavigator();
+
   return (
-    <View style={styles.container}>
-      {/* <HomeScreen/> */}
-      {/* <ProfileScreen/> */}
-      <ActiveSpot/>
-    </View>
+    <NavigationContainer >
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false
+        }}
+      >
+        <Stack.Screen
+          name='Home'
+          component={HomeScreen}
+        />
+        <Stack.Screen
+          name='ActiveSpot'
+          component={ActiveSpot}
+        />
+      </Stack.Navigator>
+      {/* <View style={styles.container}>
+        <HomeScreen/>
+        <ProfileScreen/>
+        <ActiveSpot/>
+      </View> */}
+    </NavigationContainer>
   );
 }
 //
@@ -21,6 +41,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
 });

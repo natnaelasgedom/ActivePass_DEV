@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, Image, TextInput } from 'react-native';
+import { StyleSheet, View, Text, Image, TextInput, Pressable, Button } from 'react-native';
 import colors from '../config/colors';
 
 function TopSearchBar(props) {
-    const { search, searchFunction } = props;
+    const {searchFunction } = props;
     const [input, setInput] = useState('');
 
     return (
