@@ -36,12 +36,11 @@ function HomeScreen(props) {
 
   const navigateToActiveSpot = (content) => {
     props.navigation.navigate("ActiveSpot", content);
-    //console.log('Hello from HomeScreen')
   };
 
   useEffect(() => {
-    getDataList(endpoints.pokemon.baseUrl).then((dataList) => {
-      setMasterData(dataList.results);
+    getDataList(endpoints.activePassAPI.baseUrl + 'activespots').then((dataList) => {
+      setMasterData(dataList);
       //setFilteredData(dataList.results);
     });
   }, [masterData]);
