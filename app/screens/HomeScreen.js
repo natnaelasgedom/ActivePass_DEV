@@ -20,6 +20,8 @@ function HomeScreen(props) {
   const [masterData, setMasterData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [search, setSearch] = useState("");
+  const [filterExpanded, setFilterExpanded] = useState(true);
+  const [markedSortType, setMarkedSortType] = useState("");
 
   const searchFunction = (searchString) => {
     if (searchString) {
@@ -34,25 +36,64 @@ function HomeScreen(props) {
     setSearch(searchString);
   };
 
+  const sortFunction = (sortType) => {
+    const listCopy =
+      filteredData.length > 0 ? [...filteredData] : [...masterData];
+
+    switch (sortType.toLowerCase()) {
+      case "name asc":
+        listCopy.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+      case "name desc":
+        listCopy.sort((a, b) => b.name.localeCompare(a.name));
+        break;
+      case "price asc":
+        listCopy.sort((a, b) => a.username.localeCompare(b.username)); //Må endres til riktig path når testData er på plass
+        break;
+      case "price desc":
+        listCopy.sort((a, b) => b.username.localeCompare(a.username)); //Må endres til riktig path når testData er på plass
+        break;
+      case "reset":
+        setMarkedSortType("");
+        searchFunction(search);
+        return;
+      default:
+        break;
+    }
+    setMarkedSortType(sortType.split(" ")[0]);
+    setFilteredData(listCopy);
+  };
+
   const navigateToActiveSpot = (content) => {
     props.navigation.navigate("ActiveSpot", content);
   };
 
   useEffect(() => {
-    getDataList(endpoints.activePassAPI.baseUrl + 'activespots').then((dataList) => {
-      setMasterData(dataList);
-      //setFilteredData(dataList.results);
-    });
-  }, [masterData]);
+    getDataList(endpoints.activePassAPI.baseUrl + "activespots").then(
+      (dataList) => {
+        setMasterData(dataList);
+        //setFilteredData(dataList.results);
+      }
+    );
+  }, []);
+
+  const toggleExpandedFilter = () => setFilterExpanded(!filterExpanded);
 
   return (
     <View style={styles.background}>
-      <TopSearchBar search={search} searchFunction={searchFunction} />
+      <TopSearchBar
+        search={search}
+        searchFunction={searchFunction}
+        toggleExpandedFilter={toggleExpandedFilter}
+      />
       <ResultArea
         masterData={masterData}
         filteredData={filteredData}
         navigateToActiveSpot={navigateToActiveSpot}
         searchString={search}
+        filterExpanded={filterExpanded}
+        sortFunction={sortFunction}
+        markedSortType={markedSortType}
       />
       <BottomNavBar focus="home" />
     </View>
