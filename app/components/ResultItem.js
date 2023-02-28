@@ -32,7 +32,8 @@ function ResultItem(props) {
           <Text style={styles.textHeader}>
             {value1.charAt(0).toUpperCase() + value1.slice(1)}
           </Text>
-          <Text style={styles.textRating}>9,5 Excellent (3568 visits)</Text>
+          {/* <Text style={styles.textRating}>9,5 Excellent (3568 visits)</Text> */}
+          <Text style={styles.textRating}>{value2.location.address}</Text>
           <View style={styles.distanceContainer}>
             <Image
               style={styles.distanceIcon}
