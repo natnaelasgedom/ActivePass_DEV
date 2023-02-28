@@ -9,6 +9,6 @@ export default {
         posts: 'https://jsonplaceholder.typicode.com/posts' //100 posts
     },
     activePassAPI: {
-        baseUrl: 'https://localhost:7211/api/'
+        baseUrl: 'https://activepassapi20230222221930.azurewebsites.net/api/'
     }
 }
