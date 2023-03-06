@@ -18,11 +18,6 @@ export default function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="ActiveSpot" component={ActiveSpot} />
       </Stack.Navigator>
-      {/* <View style={styles.container}>
-        <HomeScreen/>
-        <ProfileScreen/>
-        <ActiveSpot/>
-      </View> */}
     </NavigationContainer>
   );
 }

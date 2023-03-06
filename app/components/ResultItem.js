@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, View, Text, Image, Button, Pressable } from "react-native";
 import colors from "../config/colors";
+import { getDistance } from "geolib";
 
 function ResultItem(props) {
-  const { value1, value2, navigateToActiveSpot } = props;
+  const { item, navigateToActiveSpot, userLocation } = props;
   const [source, setSource] = useState(undefined);
+  const [distance, setDistance] = useState(null);
 
   const pictures = [
     {
@@ -17,29 +19,44 @@ function ResultItem(props) {
 
   useEffect(() => {
     setSource(pictures[Math.floor(Math.random() * pictures.length)].src);
+    const location = {
+      latitude: Number(item.location.latitude),
+      longitude: Number(item.location.longitude),
+    };
+    if (location.latitude && location.longitude && userLocation) {
+      setDistance(
+        getDistance(
+          userLocation,
+          {
+            latitude: Number(item.location.latitude),
+            longitude: Number(item.location.longitude),
+          },
+          1
+        )
+      );
+    }
   }, []);
-
   return (
     <View style={styles.container}>
       <Pressable
         style={styles.container}
-        onPress={() => navigateToActiveSpot(value2)}
+        onPress={() => navigateToActiveSpot(item)}
       >
         <View style={styles.imgContainer}>
           <Image source={source} style={styles.img} />
         </View>
         <View style={styles.textContainer}>
           <Text style={styles.textHeader}>
-            {value1.charAt(0).toUpperCase() + value1.slice(1)}
+            {item.name.charAt(0).toUpperCase() + item.name.slice(1)}
           </Text>
           {/* <Text style={styles.textRating}>9,5 Excellent (3568 visits)</Text> */}
-          <Text style={styles.textRating}>{value2.location.address}</Text>
+          <Text style={styles.textRating}>{item.location.address}</Text>
           <View style={styles.distanceContainer}>
             <Image
               style={styles.distanceIcon}
               source={require("../assets/mapMarker-icon/mapMarker-black-icon.png")}
             />
-            <Text style={styles.distanceText}>500 m</Text>
+            <Text style={styles.distanceText}>{distance} m</Text>
           </View>
           <View style={styles.priceContainer}>
             <Text style={styles.priceText}>Price</Text>
