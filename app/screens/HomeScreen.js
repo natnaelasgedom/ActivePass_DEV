@@ -22,9 +22,6 @@ function HomeScreen(props) {
   const [search, setSearch] = useState("");
   const [filterExpanded, setFilterExpanded] = useState(true);
   const [markedSortType, setMarkedSortType] = useState("");
-  const [distance, setDistance] = useState(null);
-  const [location, setLocation] = useState(null);
-  const [errorMsg, setErrorMsg] = useState(null);
 
   const searchFunction = (searchString) => {
     if (searchString) {
@@ -92,6 +89,7 @@ function HomeScreen(props) {
       <ResultArea
         masterData={masterData}
         filteredData={filteredData}
+        setFilteredData={setFilteredData}
         navigateToActiveSpot={navigateToActiveSpot}
         searchString={search}
         filterExpanded={filterExpanded}

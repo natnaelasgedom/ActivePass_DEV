@@ -4,7 +4,7 @@ import colors from "../config/colors";
 import { getDistance } from "geolib";
 
 function ResultItem(props) {
-  const { item, navigateToActiveSpot, userLocation } = props;
+  const { item, navigateToActiveSpot, userLocation, addDistanceToList } = props;
   const [source, setSource] = useState(undefined);
   const [distance, setDistance] = useState(null);
 
@@ -24,18 +24,23 @@ function ResultItem(props) {
       longitude: Number(item.location.longitude),
     };
     if (location.latitude && location.longitude && userLocation) {
-      setDistance(
-        getDistance(
-          userLocation,
-          {
-            latitude: Number(item.location.latitude),
-            longitude: Number(item.location.longitude),
-          },
-          1
-        )
+      let distanceNumber = getDistance(
+        userLocation,
+        {
+          latitude: Number(item.location.latitude),
+          longitude: Number(item.location.longitude),
+        },
+        1
       );
+
+      let fixedDistance = (distanceNumber / 1000).toFixed(1);
+
+      setDistance(fixedDistance);
+      addDistanceToList(item.id, fixedDistance);
+      // console.log("added distance to list from resultItem " + item.id);
     }
-  }, []);
+  }, [userLocation]);
+
   return (
     <View style={styles.container}>
       <Pressable
@@ -56,7 +61,7 @@ function ResultItem(props) {
               style={styles.distanceIcon}
               source={require("../assets/mapMarker-icon/mapMarker-black-icon.png")}
             />
-            <Text style={styles.distanceText}>{distance} m</Text>
+            <Text style={styles.distanceText}>{distance} km</Text>
           </View>
           <View style={styles.priceContainer}>
             <Text style={styles.priceText}>Price</Text>

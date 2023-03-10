@@ -8,15 +8,46 @@ import * as Location from "expo-location";
 function ResultArea(props) {
   const [location, setLocation] = useState(undefined);
   const [errorMsg, setErrorMsg] = useState(null);
+  const [distanceList, setDistanceList] = useState([]);
   const {
     masterData,
     filteredData,
+    setFilteredData,
     navigateToActiveSpot,
     searchString,
     filterExpanded,
     sortFunction,
     markedSortType,
   } = props;
+
+  const addDistanceToList = (inputId, inputDistance) => {
+    let newDistance = {
+      id: inputId,
+      distance: inputDistance,
+    };
+    if (!distanceList.some((obj) => obj.id === inputId)) {
+      setDistanceList((distanceList) => [...distanceList, newDistance]);
+    }
+  };
+
+  const filterFunction = (filterType, value) => {
+    const dataCopy = [...masterData];
+    const distanceCopy = [...distanceList];
+
+    switch (filterType.toLowerCase()) {
+      case "distance":
+        var filteredDistances = distanceCopy.filter((a) => {
+          return Number(a.distance) <= Number(value);
+        });
+        var filteredResults = dataCopy.filter((b) =>
+          filteredDistances.some((a) => a.id === b.id)
+        );
+        break;
+      default:
+        break;
+    }
+    setFilteredData(filteredResults);
+  };
 
   useEffect(() => {
     (async () => {
@@ -40,6 +71,8 @@ function ResultArea(props) {
         expanded={filterExpanded}
         sortFunction={sortFunction}
         markedSortType={markedSortType}
+        distanceList={distanceList}
+        filterFunction={filterFunction}
       />
       <View>
         <Text>Top choices</Text>
@@ -55,9 +88,10 @@ function ResultArea(props) {
             item={item}
             navigateToActiveSpot={navigateToActiveSpot}
             userLocation={location}
+            addDistanceToList={addDistanceToList}
           />
         )}
-        keyExtractor={(item) => item.name}
+        keyExtractor={(item) => item.id}
       />
     </View>
   );

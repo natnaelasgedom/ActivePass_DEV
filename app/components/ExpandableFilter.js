@@ -12,8 +12,15 @@ import colors from "../config/colors";
 import SliderBar from "./SliderBar";
 import SortButton from "./SortButton";
 
-function ExpandableFilter({ expanded = false, sortFunction, markedSortType }) {
+function ExpandableFilter({
+  expanded = false,
+  sortFunction,
+  markedSortType,
+  distanceList,
+  filterFunction,
+}) {
   const [height] = useState(new Animated.Value(0));
+  const [range, setRange] = useState(null);
 
   useEffect(() => {
     Animated.timing(height, {
@@ -44,7 +51,15 @@ function ExpandableFilter({ expanded = false, sortFunction, markedSortType }) {
         <Text style={styles.label}>Filter by</Text>
       </View>
       <View style={styles.optionsArea}>
-        {!expanded && <SliderBar type="Distance" />}
+        {!expanded && (
+          <SliderBar
+            type="Distance"
+            distanceList={distanceList}
+            setRange={setRange}
+            range={range}
+            filterFunction={filterFunction}
+          />
+        )}
       </View>
     </Animated.View>
   );
