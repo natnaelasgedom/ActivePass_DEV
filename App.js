@@ -7,7 +7,7 @@ import ProfileScreen from "./app/screens/ProfileScreen";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
-
+  //This is a test for Miriam
   return (
     <NavigationContainer>
       <Stack.Navigator
