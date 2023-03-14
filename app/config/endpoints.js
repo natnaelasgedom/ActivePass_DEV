@@ -10,7 +10,7 @@ export default {
   },
   activePassAPI: {
     baseUrl: "https://activepassapi20230222221930.azurewebsites.net/api/",
-    beeceptor: "https://activepass.free.beeceptor.com/api",
+    beeceptor: "https://activepass.free.beeceptor.com/api/",
     postman: "https://5fcda094-e4b8-48dc-be5a-604cd91665f4.mock.pstmn.io/",
   },
 };

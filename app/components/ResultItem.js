@@ -20,8 +20,8 @@ function ResultItem(props) {
   useEffect(() => {
     setSource(pictures[Math.floor(Math.random() * pictures.length)].src);
     const location = {
-      latitude: Number(item.location.latitude),
-      longitude: Number(item.location.longitude),
+      latitude: Number(item.location?.latitude),
+      longitude: Number(item.location?.longitude),
     };
     if (location.latitude && location.longitude && userLocation) {
       let distanceNumber = getDistance(
@@ -55,7 +55,9 @@ function ResultItem(props) {
             {item.name.charAt(0).toUpperCase() + item.name.slice(1)}
           </Text>
           {/* <Text style={styles.textRating}>9,5 Excellent (3568 visits)</Text> */}
-          <Text style={styles.textRating}>{item.location.address}</Text>
+          <Text style={styles.textRating}>
+            {item.location?.address ? item.location.address : ""}
+          </Text>
           <View style={styles.distanceContainer}>
             <Image
               style={styles.distanceIcon}

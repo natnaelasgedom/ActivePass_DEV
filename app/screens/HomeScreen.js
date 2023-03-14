@@ -5,6 +5,7 @@ import BottomNavBar from "../components/BottomNavBar";
 import ResultArea from "../components/ResultArea";
 import TopSearchBar from "../components/TopSearchBar";
 import colors from "../config/colors";
+import data from "../config/data";
 import endpoints from "../config/endpoints";
 
 const getDataList = async (url) => {
@@ -69,12 +70,13 @@ function HomeScreen(props) {
   };
 
   useEffect(() => {
-    getDataList(endpoints.activePassAPI.baseUrl + "activespots").then(
-      (dataList) => {
-        setMasterData(dataList);
-        //setFilteredData(dataList.results);
-      }
-    );
+    // getDataList(endpoints.activePassAPI.beeceptor + "activespots").then(
+    //   (dataList) => {
+    //     setMasterData(dataList);
+    //     //setFilteredData(dataList.results);
+    //   }
+    // );
+    setMasterData(data);
   }, []);
 
   const toggleExpandedFilter = () => setFilterExpanded(!filterExpanded);
