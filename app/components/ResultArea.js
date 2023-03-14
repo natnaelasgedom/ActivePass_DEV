@@ -93,6 +93,7 @@ function ResultArea(props) {
         )}
         keyExtractor={(item) => item.id}
       />
+      <Text>{JSON.stringify(location)}</Text>
     </View>
   );
 }

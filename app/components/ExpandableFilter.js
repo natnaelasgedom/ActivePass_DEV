@@ -24,8 +24,8 @@ function ExpandableFilter({
 
   useEffect(() => {
     Animated.timing(height, {
-      toValue: !expanded ? Dimensions.get("screen").height * 0.63 : 0,
-      duration: 150,
+      toValue: !expanded ? Dimensions.get("screen").height * 0.59 : 0,
+      duration: 100,
       useNativeDriver: false,
     }).start();
   }, [expanded, height]);
@@ -95,7 +95,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "500",
     //alignSelf: "stretch",
-
     textAlign: "left",
     paddingLeft: 5,
   },
